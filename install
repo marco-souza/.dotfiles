@@ -1,7 +1,20 @@
 #! /usr/bin/env bash
 
+# go to DOTFILES folder
+DOTFILES=$HOME/.dotfiles
+if [ ! -e $DOTFILES ]; then
+    git clone --recurse-submodules git@github.com:marco-souza/.dotfiles.git $DOTFILES
+fi
+cd $DOTFILES
+
 # Installing all dotfiles
+STOW_FOLDERS=$(ls -l $DOTFILES | awk '/^d/ {print $9}')
 for folder in $STOW_FOLDERS; do
-    stow -D $folder
+    echo Installing $folder...
     stow $folder
+    [ $folder = "emacs" ] && ~/.emacs.d/bin/doom install
 done
+echo Done!
+
+# come back to the previous word dir
+cd -

@@ -1,0 +1,13 @@
+* Personal doftiles
+** Dependencies
+Your system will need to have install:
+- git
+- bash
+- stow
+- emacs
+
+** Install
+Just run:
+#+begin_src sh Install doom with custom config
+source <(curl -s https://raw.githubusercontent.com/marco-souza/.dotfiles/main/install)
+#+end_src
