@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+# Installing all dotfiles
+for folder in $STOW_FOLDERS; do
+    stow -D $folder
+    stow $folder
+done
