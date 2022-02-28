@@ -9,6 +9,7 @@ cd $DOTFILES
 
 # Installing all dotfiles
 STOW_FOLDERS=$(ls -l $DOTFILES | awk '/^d/ {print $9}')
+echo $STOW_FOLDERS
 for folder in $STOW_FOLDERS; do
     echo Installing $folder...
     stow $folder
