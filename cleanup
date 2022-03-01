@@ -7,9 +7,10 @@ if [ ! -e $DOTFILES ]; then
 fi
 cd $DOTFILES
 
-# Installing all dotfiles
-STOW_FOLDERS=$(ls -l $DOTFILES | awk '/^d/ {print $9}')
-echo $STOW_FOLDERS
+# load stow folders
+STOW_FOLDERS=($(ls -l $DOTFILES | awk '/^d/ {print $9}' | tr '\n' ' '))
+
+# Removing stow folders
 for folder in $STOW_FOLDERS; do
     echo Removing $folder...
     stow -D $folder
