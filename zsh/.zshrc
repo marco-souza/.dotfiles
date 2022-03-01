@@ -1,10 +1,3 @@
-# set environment vars
-# ======================
-  export BROWSER='/usr/bin/brave'
-  export WORKSPACE=$HOME/dev # user Workspace
-  export EDITOR=vim
-
-
 # Setup ZSH
 # ======================
   # a If you come from bash you might have to change your $PATH.
@@ -24,19 +17,16 @@
   export SSH_KEY_PATH="~/.ssh/rsa_id"
 
   # Themes
-  ZSH_THEME="random"
-  ZSH_THEME_RANDOM_CANDIDATES=(
-    spaceship-prompt
-    # cloud
-    # af-magic
-    # robbyrussell
-    # robbyrussell
-    # flazz
-    # agnoster
-  )
+  ZSH_THEME="spaceship-prompt"
+  # cloud
+  # af-magic
+  # robbyrussell
+  # robbyrussell
+  # flazz
+  # agnoster
 
   # Uncomment the following line to change how often to auto-update (in days).
-  export UPDATE_ZSH_DAYS=7
+  export UPDATE_ZSH_DAYS=3
 
   # Uncomment the following line to enable command auto-correction.
   ENABLE_CORRECTION="true"
@@ -80,6 +70,7 @@
     plugins=(
       git
       npm
+      rust
       docker
       ansible
       kubectl
@@ -106,9 +97,7 @@
   if [ ! -x "$(command -v go)" ]; then
     wget -c https://golang.org/dl/go1.17.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
   fi
-  if [ ! -e $GOPATH ]; then
-    mkdir -p $GOPATH
-  fi
+  [ ! -e $GOPATH ] && mkdir -p $GOPATH
 
 
 # Rust Setup
@@ -122,11 +111,9 @@
 
 # Deno Setup
 # =================
-  export DENO_HOME="$HOME/.deno"
-  export PATH=$PATH:$DENO_HOME/bin
-  if [ ! -e $DENO_HOME ]; then
-    mkdir -p $DENO_HOME
-  fi
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH=$PATH:$DENO_INSTALL/bin
+  [ ! -e $DENO_INSTALL ] && mkdir -p $DENO_INSTALL
   if [ ! -x "$(command -v deno)" ]; then
     cargo install deno
   fi
@@ -138,9 +125,7 @@
   export NPM_HOME=$HOME/.npm-global
   export PATH=$PATH:$NPM_HOME/bin
   npm config set prefix $NPM_HOME
-  if [ ! -e $NPM_HOME ]; then
-    mkdir -p $NPM_HOME
-  fi
+  [ ! -e $NPM_HOME ] && mkdir -p $NPM_HOME
 
   ## Yarn
   export YARN_HOME=$HOME/.config/yarn
@@ -165,31 +150,35 @@
     fi
   fi
 
-  if [ ! -x "$(command -v virtualenvwrapper.sh)" ] || [ ! -x "$(command -v wakatime)" ]; then
-    pip install --user virtualenv virtualenvwrapper wakatime
+  # setup pyenv
+  if [ ! -x "$(command -v pyenv)" ]; then
+    pip install pyenv
   fi
+  eval "$(pyenv init --path)"
+
+  # setup virtualenv
+  if [ ! -x "$(command -v virtualenvwrapper.sh)" ]; then
+    pip install virtualenv virtualenvwrapper
+  fi
+
   export ENVS=$HOME/.virtualenvs/
-  if [ ! -e $ENVS ]; then
-    mkdir -p $ENVS
-  fi
+  [ ! -e $ENVS ] && mkdir -p $ENVS
   export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  VENV_WRAPPER=$(which virtualenvwrapper.sh)
-  source $VENV_WRAPPER
+  source $(which virtualenvwrapper.sh)
+
+  # install wakatime cli
+  [ ! -x "$(command -v wakatime)" ] && yay -Syu --noconfirm wakatime-cli-bin
 
 
 # Emacs Doom Setup
 # =================
   export EMACS_HOME="$HOME/.emacs.d/"
   export PATH=$PATH:$EMACS_HOME/bin
-  if [ ! -e $EMACS_HOME ]; then
-    source <(curl -s https://raw.githubusercontent.com/marco-souza/doom.d/main/setup.sh)
-  fi
 
 
 # Proton setup + protontricks
 # ===================
   export STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/.local/share/Steam"
-
 
 
 # Snap Setup
@@ -198,18 +187,14 @@
   export PATH=$PATH:$SNAP_HOME/bin
 
 
-
-
 # Aliases Setup
 # =================
   file_paths=(
     $HOME/.aliases
-    
+    $HOME/.paradigm.aliases
   )
   for file_path in ${file_paths[@]}; do
-    if [ -f $file_path ]; then
-      source $file_path
-    fi
+    [ -f $file_path ] && source $file_path
   done
 
 
@@ -218,7 +203,3 @@
   if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
   fi
-export DENO_INSTALL="/home/marco/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-export DVM_DIR="/home/marco/.dvm"
-export PATH="$DVM_DIR/bin:$PATH"
