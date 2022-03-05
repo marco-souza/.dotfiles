@@ -63,3 +63,6 @@ ws() {
             open ${2:-$1} ;;
     esac
 }
+
+cmd_list='new list remove open'
+complete -W $cmd_list ws
