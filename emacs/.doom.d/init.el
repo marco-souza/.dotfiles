@@ -23,8 +23,8 @@
        company           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +fuzzy)      ; a search engine for love and life
-       vertico           ; the search engine of the future
+       ;;(ivy +fuzzy)      ; a search engine for love and life
+       (vertico +fuzzy)           ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -55,7 +55,7 @@
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-       ;;(format +onsave)  ; automated prettiness
+       (format +onsave)  ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
        ;;multiple-cursors  ; editing in many places at once
@@ -74,8 +74,8 @@
 
        :term
        ;;eshell            ; the elisp shell that works everywhere
-       ;;shell             ; simple shell REPL for Emacs
-       term              ; basic terminal emulator for Emacs
+       shell             ; simple shell REPL for Emacs
+       ;;term              ; basic terminal emulator for Emacs
        ;;vterm             ; the best terminal emulation in Emacs
 
        :checkers
@@ -101,8 +101,8 @@
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
        ;;taskrunner        ; taskrunner for all your projects
-       ;;terraform         ; infrastructure as code
-       tmux              ; an API for interacting with tmux
+       terraform         ; infrastructure as code
+       ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
 
        :os
