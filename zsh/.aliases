@@ -68,8 +68,8 @@
 ################
     alias ev="nvim"
     alias ec="code-insiders"
-    alias ee="emacs"
-    alias eet="emacs -nw"
+    alias ee="emacsclient -c"
+    alias eet="emacsclient -nw"
     alias ees="emacs --daemon"
     alias eec="emacsclient -t"
 
