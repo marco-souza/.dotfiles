@@ -187,6 +187,16 @@
   export PATH=$PATH:$SNAP_HOME/bin
 
 
+# Scripts Setup
+# =================
+  scripts=(
+    $HOME/.local/bin/ws
+  )
+  for script in ${scripts[@]}; do
+    source $script
+  done
+
+
 # Aliases Setup
 # =================
   file_paths=(

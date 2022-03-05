@@ -1,0 +1,65 @@
+#! /usr/bin/env bash
+
+workspace=${WORKSPACE:-$HOME}
+
+list() {
+    ls $workspace
+}
+
+open() {
+    local ws=$1
+    [[ $ws == "" ]] && ws=$(ls $workspace | fzf)
+
+    local ws_path=$workspace/$ws
+    if [ ! -e $ws_path ]; then
+        read "?'$ws' workspace not exists. Wanna create it? [Y/n] "
+        echo    # move to a new line
+
+        [[ ${REPLY:-y} =~ ^[Nn]$ ]] && exit 1
+        create $ws
+    fi
+
+    # workspace=$ws_path
+    cd $ws_path
+}
+
+create() {
+    local ws_path=$workspace/$1
+
+    # create workspace
+    mkdir $ws_path
+    cd $ws_path
+
+    # init git
+    [ ! -e "./.git" ] && git init
+}
+
+del () {
+    [[ $1 == "" ]] && echo "No workspace to delete" && exit 1
+
+    local ws_path=$workspace/$1
+    if [ -e $ws_path ]; then
+        read "?Sure you wanna delete '$1' workspace? [Y/n] "
+        echo    # move to a new line
+
+        [[ $REPLY =~ ^[Nn]$ ]] && exit 1
+        rm -rf $ws_path
+    else
+        echo "No workspace '$1' found"
+    fi
+}
+
+ws() {
+    cmd=$1
+
+    case $cmd in
+        l|ls|list)
+            list ;;
+        n|new|make|init)
+            create $2 ;;
+        d|r|rm|delete|remove)
+            del $2 ;;
+        o|open|*)
+            open ${2:-$1} ;;
+    esac
+}
