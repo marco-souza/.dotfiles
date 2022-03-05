@@ -1,13 +1,30 @@
 * Personal doftiles
+
+[[Arch Linux][https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=flat-square.svg]]
+
 ** Dependencies
 Your system will need to have install:
 - git
-- bash
+- zsh
 - stow
 - emacs
+- ripgrep - fuzzy finder used by emacs
+
+#+begin_comment
+Use <s for source and <c for comment (org-mode)
+#+end_comment
+
+#+begin_src sh Arch Linux install
+pamac install git zsh stow emacs ripgrep
+#+end_src
 
 ** Install
 Just run:
 #+begin_src sh Install doom with custom config
 source <(curl -s https://raw.githubusercontent.com/marco-souza/.dotfiles/main/install)
 #+end_src
+
+** Next steps [0/1]
+- [ ] Create osx branch
+- [ ] Add [[https://bismuth-forge.github.io/bismuth/index.html][bistmuth]] configs
+- [ ] Add k8s config for switch clusters
