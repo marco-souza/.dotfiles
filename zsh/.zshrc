@@ -137,31 +137,20 @@
 
 # Python Setup
 # ===================
-  if [ ! -x "$(command -v pip)" ]; then
-    if [ -x "$(command -v pip3)" ]; then
-      alias pip=pip3
-    elif [ -x "$(command -v python3)" ]; then
-      python3 <(curl -s  https://bootstrap.pypa.io/get-pip.py)
-      alias pip=pip3
-    else;
-      python <(curl -s  https://bootstrap.pypa.io/pip/2.7/get-pip.py)
-    fi
-  fi
-
   # setup pyenv
   if [ ! -x "$(command -v pyenv)" ]; then
     pip install pyenv
   fi
-  eval "$(pyenv init --path)"
-
-  # install wakatime cli
-  [ ! -x "$(command -v wakatime)" ] && yay -Syu --noconfirm wakatime-cli-bin
+  eval "$(pyenv init -)"
 
 
 # Emacs Doom Setup
 # =================
   export EMACS_HOME="$HOME/.emacs.d/"
   export PATH=$PATH:$EMACS_HOME/bin
+
+  # install wakatime cli
+  [ ! -x "$(command -v wakatime)" ] && yay -Syu --noconfirm wakatime-cli-bin
 
 
 # Proton setup + protontricks
