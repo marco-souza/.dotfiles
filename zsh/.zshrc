@@ -164,7 +164,8 @@
   export ENVS=$HOME/.virtualenvs/
   [ ! -e $ENVS ] && mkdir -p $ENVS
   export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  source $(which virtualenvwrapper.sh)
+  VENV_PATH=$(which virtualenvwrapper.sh)
+  [ ! -e $VENV_PATH ] && source $VENV_PATH
 
   # install wakatime cli
   [ ! -x "$(command -v wakatime)" ] && yay -Syu --noconfirm wakatime-cli-bin
