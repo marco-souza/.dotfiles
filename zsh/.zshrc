@@ -140,13 +140,11 @@
   if [ ! -x "$(command -v pip)" ]; then
     if [ -x "$(command -v pip3)" ]; then
       alias pip=pip3
+    elif [ -x "$(command -v python3)" ]; then
+      python3 <(curl -s  https://bootstrap.pypa.io/get-pip.py)
+      alias pip=pip3
     else;
-      if [ -x "$(command -v python3)" ]; then
-        python3 <(curl -s  https://bootstrap.pypa.io/get-pip.py)
-        alias pip=pip3
-      else;
-        python <(curl -s  https://bootstrap.pypa.io/pip/2.7/get-pip.py)
-      fi
+      python <(curl -s  https://bootstrap.pypa.io/pip/2.7/get-pip.py)
     fi
   fi
 
@@ -155,17 +153,6 @@
     pip install pyenv
   fi
   eval "$(pyenv init --path)"
-
-  # setup virtualenv
-  if [ ! -x "$(command -v virtualenvwrapper.sh)" ]; then
-    pip install virtualenv virtualenvwrapper
-  fi
-
-  export ENVS=$HOME/.virtualenvs/
-  [ ! -e $ENVS ] && mkdir -p $ENVS
-  export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-  VENV_PATH=$(which virtualenvwrapper.sh)
-  [ ! -e $VENV_PATH ] && source $VENV_PATH
 
   # install wakatime cli
   [ ! -x "$(command -v wakatime)" ] && yay -Syu --noconfirm wakatime-cli-bin
