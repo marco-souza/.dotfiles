@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+*.log
+
+# vim
+vim/.vim/plugged/
+vim/.vim/undodir/
