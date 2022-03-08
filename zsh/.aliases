@@ -6,12 +6,11 @@
 
 # Package Aliases
 #################
-    
-    alias i="yay -Sy --noconfirm"
-    alias s="yay -Ss"
-    alias r="yay -Rsc"
-    alias u="yay -Syu; npm up -g npm; sudo deno upgrade"
-  
+    alias i="brew install"
+    alias ic="brew install --cask "
+    alias s="brew search"
+    alias r="brew uninstall"
+    alias u="brew update && brew tap homebrew/cask && brew upgrade"
 
 
 # Deno aliases
