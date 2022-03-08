@@ -24,7 +24,7 @@ Just run:
 source <(curl -s https://raw.githubusercontent.com/marco-souza/.dotfiles/main/install)
 #+end_src
 
-** Next steps [0/1]
-- [ ] Create osx branch
+** Next steps [1/3]
+- [X] Create osx branch
 - [ ] Add [[https://bismuth-forge.github.io/bismuth/index.html][bistmuth]] configs
 - [ ] Add k8s config for switch clusters
