@@ -79,114 +79,18 @@
       zsh-autosuggestions
     )
 
-  source $ZSH/oh-my-zsh.sh
 
-
-# System Setup
-# ===================
-  ## Settup env language: https://wiki.archlinux.org/index.php/Locale
-  export LANG=pt_BR.UTF-8
-  export LC_ALL=pt_BR.UTF-8
-
-
-# Go Setup
-# ===============
-  export GOPATH=$WORKSPACE/go
-  export GO_GLOBAL=/usr/local/opt/go/libexec/bin
-  export PATH=$PATH:$GOPATH/bin:$GO_GLOBAL:$PATH
-  if [ ! -x "$(command -v go)" ]; then
-    wget -c https://golang.org/dl/go1.17.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-  fi
-  [ ! -e $GOPATH ] && mkdir -p $GOPATH
-
-
-# Rust Setup
-# =================
-  export RUST_HOME="$HOME/.cargo"
-  export PATH=$PATH:$RUST_HOME/bin
-  if [ ! -x "$(command -v cargo)" ] || [ ! -x "$(command -v rustc)" ]; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  fi
-
-
-# Deno Setup
-# =================
-  export DENO_INSTALL="$HOME/.deno"
-  export PATH=$PATH:$DENO_INSTALL/bin
-  [ ! -e $DENO_INSTALL ] && mkdir -p $DENO_INSTALL
-  if [ ! -x "$(command -v deno)" ]; then
-    cargo install deno
-  fi
-
-
-# Node Setup
-# =================
-  ## NPM
-  export NPM_HOME=$HOME/.npm-global
-  export PATH=$PATH:$NPM_HOME/bin
-  npm config set prefix $NPM_HOME
-  [ ! -e $NPM_HOME ] && mkdir -p $NPM_HOME
-
-  ## Yarn
-  export YARN_HOME=$HOME/.config/yarn
-  export PATH=$PATH:$YARN_HOME/global/node_modules/.bin
-  if [ ! -e $YARN_HOME ]; then
-    npm i -g yarn
-    mkdir -p $YARN_HOME
-  fi
-
-# Python Setup
-# ===================
-  # setup pyenv
-  if [ ! -x "$(command -v pyenv)" ]; then
-    pip install pyenv
-  fi
-  eval "$(pyenv init -)"
-
-
-# Emacs Doom Setup
-# =================
-  export EMACS_HOME="$HOME/.emacs.d/"
-  export PATH=$PATH:$EMACS_HOME/bin
-
-  # install wakatime cli
-  [ ! -x "$(command -v wakatime)" ] && yay -Syu --noconfirm wakatime-cli-bin
-
-
-# Proton setup + protontricks
-# ===================
-  export STEAM_COMPAT_CLIENT_INSTALL_PATH="$HOME/.local/share/Steam"
-
-
-# Snap Setup
-# ===================
-  export SNAP_HOME=/var/lib/snapd/snap
-  export PATH=$PATH:$SNAP_HOME/bin
-
-
-# Scripts Setup
-# =================
-  scripts=(
-    $HOME/.local/bin/ws
-  )
-  for script in ${scripts[@]}; do
-    source $script
-  done
-
-
-# Aliases Setup
+# Load files
 # =================
   file_paths=(
+    # zsh
+    $ZSH/oh-my-zsh.sh
+    # aliases
     $HOME/.aliases
     $HOME/.paradigm.aliases
+    # scripts
+    $HOME/.local/bin/ws
   )
   for file_path in ${file_paths[@]}; do
     [ -f $file_path ] && source $file_path
   done
-
-
-# config Tilix
-# ===================
-  if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-  fi
