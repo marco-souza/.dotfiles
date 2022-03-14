@@ -74,6 +74,9 @@
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
+
+    # pyenv virtualenv
+    [ -x "$(command -v pyenv)" ] && eval "$(pyenv virtualenv-init -)"
   else;
     echo "Please install pyenv"
   fi
