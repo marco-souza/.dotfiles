@@ -77,3 +77,8 @@
 # ===================
   export NEWLINE=$'\n'
   export PROMPT="$PROMPT $NEWLINE>> "
+
+
+  # Fig post block. Keep at the bottom of this file.
+  eval "$(fig init zsh post)"
+  eval "$(fig init zsh pre)"
