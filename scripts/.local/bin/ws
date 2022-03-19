@@ -2,11 +2,11 @@
 
 workspace=${WORKSPACE:-$HOME}
 
-list() {
+_ws_list() {
     ls $workspace
 }
 
-open() {
+_ws_open() {
     local ws=$1
     [[ $ws == "" ]] && ws=$(ls $workspace | fzf)
 
@@ -23,7 +23,7 @@ open() {
     cd $ws_path
 }
 
-create() {
+_ws_create() {
     local ws_path=$workspace/$1
 
     # create workspace
@@ -34,7 +34,7 @@ create() {
     [ ! -e "./.git" ] && git init
 }
 
-del () {
+_ws_del () {
     [[ $1 == "" ]] && echo "No workspace to delete" && exit 1
 
     local ws_path=$workspace/$1
@@ -54,13 +54,13 @@ ws() {
 
     case $cmd in
         l|ls|list)
-            list ;;
+            _ws_list ;;
         n|new|make|init)
-            create $2 ;;
+            _ws_create $2 ;;
         d|r|rm|delete|remove)
-            del $2 ;;
+            _ws_del $2 ;;
         o|open|*)
-            open ${2:-$1} ;;
+            _ws_open ${2:-$1} ;;
     esac
 }
 
