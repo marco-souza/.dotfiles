@@ -3,7 +3,7 @@
   export BROWSER="/usr/bin/brave"
   export SHELL="/usr/bin/zsh"
   export EDITOR="/usr/bin/vim"
-  export WORKSPACE=$HOME/dev # user Workspace
+  export WORKSPACE=$HOME/workspace # user Workspace
 
 
 # Setup user profile
@@ -86,11 +86,6 @@
 # =================
   export EMACS_HOME="$HOME/.emacs.d/"
   export PATH=$PATH:$EMACS_HOME/bin
-
-
-# Fig Setup
-# ===================
-  [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 
 
 # Ruby Setup
