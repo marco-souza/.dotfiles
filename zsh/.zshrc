@@ -87,7 +87,6 @@
     $ZSH/oh-my-zsh.sh
     # aliases
     $HOME/.aliases
-    $HOME/.paradigm.aliases
     # scripts
     $HOME/.local/bin/ws
   )
