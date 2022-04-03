@@ -3,7 +3,7 @@
 # go to DOTFILES folder
 DOTFILES=$HOME/.dotfiles
 if [ ! -e $DOTFILES ]; then
-    git clone --recurse-submodules git@github.com:marco-souza/.dotfiles.git $DOTFILES
+    git clone --recurse https://github.com/marco-souza/.dotfiles $DOTFILES
 fi
 cd $DOTFILES
 
