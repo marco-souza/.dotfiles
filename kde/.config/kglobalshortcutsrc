@@ -1,6 +1,10 @@
+[$Version]
+update_info=bismuth_shortcuts_category.upd:bismuth-shortcuts-category
+
 [ActivityManager]
 _k_friendly_name=Activity Manager
 switch-to-activity-cd915191-804f-4d50-8fc3-f8e5c0279f54=none,none,Switch to activity "Default"
+switch-to-activity-d59a63a9-2d84-439f-ac30-e4520cf49ecf=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
@@ -8,6 +12,44 @@ Switch keyboard layout to English (US, alt. intl.)=none,none,Switch keyboard lay
 Switch keyboard layout to English (US, intl., with dead keys)=none,none,Switch keyboard layout to English (US\\, intl.\\, with dead keys)
 Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher
+
+[bismuth]
+_k_friendly_name=Window Tiling
+decrease_master_size=,,Decrease Master Area Size
+decrease_master_win_count=,Meta+[,Decrease Master Area Window Count
+decrease_window_height=,Meta+Ctrl+K,Decrease Window Height
+decrease_window_width=,Meta+Ctrl+H,Decrease Window Width
+focus_bottom_window=,Meta+J,Focus Bottom Window
+focus_left_window=,Meta+H,Focus Left Window
+focus_next_window=,,Focus Next Window
+focus_prev_window=,,Focus Previous Window
+focus_right_window=,Meta+L,Focus Right Window
+focus_upper_window=,Meta+K,Focus Upper Window
+increase_master_size=,,Increase Master Area Size
+increase_master_win_count=,Meta+],Increase Master Area Window Count
+increase_window_height=,Meta+Ctrl+J,Increase Window Height
+increase_window_width=,Meta+Ctrl+L,Increase Window Width
+move_window_to_bottom_pos=,Meta+Shift+J,Move Window Down
+move_window_to_left_pos=,Meta+Shift+H,Move Window Left
+move_window_to_next_pos=,,Move Window to the Next Position
+move_window_to_prev_pos=,,Move Window to the Previous Position
+move_window_to_right_pos=,Meta+Shift+L,Move Window Right
+move_window_to_upper_pos=,Meta+Shift+K,Move Window Up
+next_layout=Meta+\\\\\tMeta+Alt+\\\\,Meta+\\\\,Switch to the Next Layout
+prev_layout=Meta+|\tMeta+Alt+|,Meta+|,Switch to the Previous Layout
+push_window_to_master=,Meta+Return,Push Active Window to Master Area
+rotate=none,Meta+R,Rotate
+rotate_part=,Meta+Shift+R,Rotate Part
+rotate_reverse=,,Rotate (Reverse)
+toggle_float_layout=,Meta+Shift+F,Toggle Floating Layout
+toggle_monocle_layout=,Meta+M,Toggle Monocle Layout
+toggle_quarter_layout=,,Toggle Quarter Layout
+toggle_spiral_layout=,,Toggle Spiral Layout
+toggle_spread_layout=,,Toggle Spread Layout
+toggle_stair_layout=,,Toggle Stair Layout
+toggle_three_column_layout=,,Toggle Three Column Layout
+toggle_tile_layout=,Meta+T,Toggle Tile Layout
+toggle_window_floating=,Meta+F,Toggle Active Window Floating
 
 [brave-ekjljecmgnlccpdbemhjioaclikcjngg-Default.desktop]
 _k_friendly_name=PodCodar PWA | Progressive Web App
@@ -250,10 +292,10 @@ bismuth_move_window_to_next_pos=Meta+Shift+J,none,Bismuth: Move Window to the Ne
 bismuth_move_window_to_prev_pos=Meta+Shift+K,none,Bismuth: Move Window to the Previous Position
 bismuth_move_window_to_right_pos=Meta+Shift+L,none,Bismuth: Move Window Right
 bismuth_move_window_to_upper_pos=none,none,Bismuth: Move Window Up
-bismuth_next_layout=Meta+\\\\,none,Bismuth: Switch to the Next Layout
-bismuth_prev_layout=Meta+|,none,Bismuth: Switch to the Previous Layout
+bismuth_next_layout=none,none,Bismuth: Switch to the Next Layout
+bismuth_prev_layout=none,none,Bismuth: Switch to the Previous Layout
 bismuth_push_window_to_master=Meta+Alt+Return,none,Bismuth: Push Active Window to Master Area
-bismuth_rotate=Meta+R,none,Bismuth: Rotate
+bismuth_rotate=none,none,Bismuth: Rotate
 bismuth_rotate_part=none,none,Bismuth: Rotate Part
 bismuth_rotate_reverse=Meta+Shift+R,none,Bismuth: Rotate (Reverse)
 bismuth_toggle_float_layout=none,none,Bismuth: Toggle Floating Layout
@@ -294,11 +336,11 @@ activate widget 110=Alt+Esc,none,Activate Present Windows Button Widget
 activate widget 220=Meta+C,none,Activate Better inline clock Widget
 activate widget 84=Meta+Shift+Q,none,Activate Compact ShutDown Widget
 activate widget 93=Meta+Shift+C,none,Activate Clipboard Widget
-clear-history=none,,Clear Clipboard History
+clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
-cycleNextAction=none,,Next History Item
-cyclePrevAction=none,,Previous History Item
-edit_clipboard=none,,Edit Contents…
+cycleNextAction=none,none,Next History Item
+cyclePrevAction=none,none,Previous History Item
+edit_clipboard=none,none,Edit Contents…
 new instance for entry 1=Meta+Ctrl+1,Meta+Ctrl+1,New Instance for Entry 1
 new instance for entry 10=Meta+Ctrl+0,Meta+Ctrl+0,New Instance for Entry 10
 new instance for entry 11=Meta+Ctrl+Z,Meta+Ctrl+Z,New Instance for Entry 11
@@ -322,16 +364,16 @@ repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show latte global settings=Meta+W,Meta+W,Show Latte Global Settings
 show latte view=Meta+`,Meta+`,Show Latte Dock/Panel
 show view settings=Meta+A,Meta+A,Cycle Through Dock/Panel Settings Windows
-show-barcode=none,,Show Barcode…
+show-barcode=none,none,Show Barcode…
 show-on-mouse-pos=none,Meta+V,Open Klipper at Mouse Position
 
 [mediacontrol]
 _k_friendly_name=Media Controller
-mediavolumedown=none,,Media volume down
-mediavolumeup=none,,Media volume up
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
 nextmedia=Media Next,Media Next,Media playback next
 pausemedia=Media Pause,Media Pause,Pause media playback
-playmedia=none,,Play media playback
+playmedia=none,none,Play media playback
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
@@ -373,7 +415,7 @@ Turn Off Screen=none,none,Turn Off Screen
 _k_friendly_name=Power Management
 
 [plasmashell]
-_k_friendly_name=Latte Dock
+_k_friendly_name=Plasma
 activate task manager entry 1=none,Meta+1,Activate Task Manager Entry 1
 activate task manager entry 10=Meta+0,Meta+0,Activate Task Manager Entry 10
 activate task manager entry 2=none,Meta+2,Activate Task Manager Entry 2
@@ -384,10 +426,19 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 3=Alt+F1,none,Activate Application Launcher Widget
+clear-history=,,Clear Clipboard History
+clipboard_action=,Ctrl+Alt+X,Enable Clipboard Actions
+cycleNextAction=,,Next History Item
+cyclePrevAction=,,Previous History Item
+edit_clipboard=,,Edit Contents…
 manage activities=none,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,none,Walk through activities
 previous activity=Meta+Shift+Tab,none,Walk through activities (Reverse)
+repeat_action=,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
+show-barcode=,,Show Barcode…
+show-on-mouse-pos=,Meta+V,Open Klipper at Mouse Position
 stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
