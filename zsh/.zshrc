@@ -35,7 +35,7 @@
   COMPLETION_WAITING_DOTS="true"
 
   # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-  HIST_STAMPS="dd-mm-yyyy"
+  HIST_STAMPS="%d.%m.%y %T"
   # Plugins
     ZSH_PLUGINS_HOME=$ZSH/custom/plugins
 
