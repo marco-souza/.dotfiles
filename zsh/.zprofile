@@ -1,7 +1,7 @@
 # set environment vars
 # ======================
   export BROWSER="/usr/bin/brave"
-  export SHELL="/usr/bin/zsh"
+  export SHELL="/usr/local/bin/zsh"
   export EDITOR="/usr/bin/vim"
   export WORKSPACE=$HOME/workspace # user Workspace
 
