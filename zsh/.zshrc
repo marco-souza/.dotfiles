@@ -3,6 +3,9 @@
   # a If you come from bash you might have to change your $PATH.
   export PATH=$PATH:$HOME/.local/bin:/usr/local/bin
 
+  # update emacs path (MacOS)
+  export PATH=$PATH:/usr/local/Cellar/emacs-plus@28/28.1/bin/
+
   # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
   export ZSH_CUSTOM=$ZSH/custom
