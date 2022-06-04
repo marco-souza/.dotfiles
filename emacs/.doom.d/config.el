@@ -63,7 +63,7 @@
           ("HOLD" :foreground "#9f7efe" :weight normal :underline t)
           ("DONE" :foreground "#50a14f" :weight normal :underline t)
           ("CANCELED" :foreground "#ff6480" :weight normal :underline t))
-        org-agenda-files (list "~/notes/agenda.org")))
+        org-agenda-files (list "~/notes/agenda.org" "~/notes/personal.org" "~/notes/paradigm.org")))
 
 ;; Setup zsh
 (setq shell-file-name "zsh")
