@@ -30,11 +30,12 @@
 
 # Yarn Aliases
 ##############
-    alias js="yarn"
-    alias js0="yarn init"
-    alias jsi="yarn add"
-    alias jsid="yarn add -D"
-    alias jsr="yarn remove"
+    alias js="pnpm"
+    alias js0="pnpm init"
+    alias jsi="pnpm add"
+    alias jsid="pnpm add -D"
+    alias jsr="pnpm remove"
+    alias jsu="pnpm update"
 
 
 # Make Aliases
