@@ -1033,6 +1033,7 @@ Uuid={fbcfe22b-6c8c-485d-b763-165073204a58}
 
 [DirSelect Dialog]
 DirSelectDialog Size[$d]
+History Items[$d]
 
 [General]
 BrowserApplication[$d]
