@@ -54,7 +54,9 @@
 
 ;; Setup org mode
 (after! org
-  (setq org-directory "~/notes/"
+  (setq org-log-done 'time
+        org-directory "~/notes/"
+        org-agenda-files (list "~/notes/agenda.org" "~/notes/personal.org" "~/notes/paradigm.org")
         org-todo-keywords '((sequence "TODO(t)" "WIP(i)" "WAIT(w)" "HOLD(h)" "|" "DONE(d)" "CANCELED(c)"))
         org-todo-keyword-faces
         '(("TODO" :foreground "lime" :weight normal :underline t)
@@ -63,7 +65,7 @@
           ("HOLD" :foreground "#9f7efe" :weight normal :underline t)
           ("DONE" :foreground "#50a14f" :weight normal :underline t)
           ("CANCELED" :foreground "#ff6480" :weight normal :underline t))
-        org-agenda-files (list "~/notes/agenda.org" "~/notes/personal.org" "~/notes/paradigm.org")))
+  ))
 
 ;; Setup zsh
 (setq shell-file-name "zsh")
