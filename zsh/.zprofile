@@ -53,18 +53,34 @@
 
 # Node Setup
 # =================
-  ## NPM
+  ## npm
   export NPM_HOME=$HOME/.npm-global
   export PATH=$PATH:$NPM_HOME/bin
   npm config set prefix $NPM_HOME
   [ ! -e $NPM_HOME ] && mkdir -p $NPM_HOME
 
-  ## Yarn
+  ## yarn
   export YARN_HOME=$HOME/.config/yarn
   export PATH=$PATH:$YARN_HOME/global/node_modules/.bin
   if [ ! -e $YARN_HOME ]; then
     npm i -g yarn
     mkdir -p $YARN_HOME
+  fi
+
+  ## pnpm
+  export PNPM_HOME=$HOME/.local/share/pnpm
+  export PATH=$PATH:$PNPM_HOME
+  if [ ! -e $PNPM_HOME ]; then
+    npm i -g pnpm pnpx
+    mkdir -p $PNPM_HOME
+  fi
+
+  ## bun
+  export BUN_HOME=$HOME/.bun
+  export PATH=$PATH:$BUN_HOME/bin
+  if [ ! -e $BUN_HOME ]; then
+    curl https://bun.sh/install | bash
+    mkdir -p $BUN_HOME
   fi
 
 
@@ -93,3 +109,8 @@
   # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
   export PATH="$PATH:$HOME/.rvm/bin"
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+
+## Completions
+  ## bun
+  [ -s "/home/marco/.bun/_bun" ] && source "/home/marco/.bun/_bun"
